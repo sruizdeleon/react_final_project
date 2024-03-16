@@ -1,0 +1,11 @@
+.card {
+    background-color: yellowgreen;
+}
+
+.card__header {
+    background-color: aqua;
+}
+
+.card__image {
+    background-color: black;
+}

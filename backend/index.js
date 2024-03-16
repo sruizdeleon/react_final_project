@@ -1,16 +1,18 @@
-const express = require("express")
-const mongoose = require("mongoose")
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const userRoutes = require("./routes/user.routes");
+const filmRoutes = require("./routes/film.routes");
 
-const userRoutes = require("./routes/user.routes")
-const filmRoutes = require("./routes/film.routes")
+const app = express();
 
+app.use(cors());
 
-const app = express()
-
-app.use(express.json())
+app.use(express.json());
 
 mongoose
-	.connect("mongodb+srv://sergioruiz:<bqpx3BixVQnuBIeM>@cluster0.zc2dgky.mongodb.net/video_club")
+	.connect(process.env.DB_USER)
 	.then(() => {
 		console.log(`Conexion con base de datos exitosa`);
 	})
@@ -18,9 +20,9 @@ mongoose
 		console.log(`Error al conectar con la base de datos: ${err}`);
 	});
 
-app.use("/api/users",userRoutes)
-app.use("/api/films",filmRoutes)
+app.use("/api/users", userRoutes);
+app.use("/api/films", filmRoutes);
 
-app.listen(3000, ()=>{
-    console.log(`API funcionado... en puerto 3000`)
-})
+app.listen(process.env.PORT, () => {
+	console.log(`API funcionado... en puerto 3000`);
+});
