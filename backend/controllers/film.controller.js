@@ -29,8 +29,8 @@ async function insertFilm(req, res) {
 			userId: userId,
 		});
 
-		await newFilm.save();
-		return res.json({ msg: "pelicula guardada" });
+		const filmSaved = await newFilm.save();
+		return res.json({ msg: "pelicula guardada", data: filmSaved });
 	} catch (error) {
 		console.log(error);
 		return res.status(500).json({ msg: "error al guardar la película" });

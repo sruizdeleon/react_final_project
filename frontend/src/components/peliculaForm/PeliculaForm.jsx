@@ -3,10 +3,15 @@ import { SessionContext } from "../../contexts/SessionContext";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 
-const PeliculaForm = ({ visibleFormPelicula, onCancelar }) => {
+const PeliculaForm = ({
+	visibleFormPelicula,
+	onCancelar,
+	onAgregarPelicula,
+	onMostrarMsgFetch,
+	peliculaAModificar, // Como pasar peliculas a modificar.
+}) => {
 	const [cookie, setCookie, removeCookie] = useCookies(["addFilmForm"]);
 	const { user, saveTime, logout } = useContext(SessionContext);
-	const [errorMsg, setErrorMsg] = useState(null);
 	const [datos, setDatos] = useState({
 		title: null,
 		synopsis: null,
@@ -15,10 +20,8 @@ const PeliculaForm = ({ visibleFormPelicula, onCancelar }) => {
 		director: null,
 		categories: [],
 		platforms: [],
-		images: {cartel: null, poster: null}
+		images: { cartel: null, poster: null },
 	});
-
-	console.log(datos)
 
 	const categoriesOptions = [
 		"Acción",
@@ -44,10 +47,10 @@ const PeliculaForm = ({ visibleFormPelicula, onCancelar }) => {
 		const selection = event.target.value;
 		if (array.indexOf(selection) === -1) {
 			array.push(selection);
-			setDatos({...datos, categories: array})
+			setDatos({ ...datos, categories: array });
 		} else {
 			array.splice(array.indexOf(selection), 1);
-			setDatos({...datos, categories: array})
+			setDatos({ ...datos, categories: array });
 		}
 	}
 
@@ -55,30 +58,28 @@ const PeliculaForm = ({ visibleFormPelicula, onCancelar }) => {
 		const selection = event.target.value;
 		if (array.indexOf(selection) === -1) {
 			array.push(selection);
-			setDatos({...datos, platforms: array})
+			setDatos({ ...datos, platforms: array });
 		} else {
 			array.splice(array.indexOf(selection), 1);
-			setDatos({...datos, platforms: array})
+			setDatos({ ...datos, platforms: array });
 		}
 	}
 
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
 		setCookie("addFilmForm", datos);
-		console.log(datos);
 		const horaActual = saveTime();
 		if (user && horaActual - user.time < 60) {
 			axios
 				.post(`http://localhost:3000/api/films?token=${user.token}`, datos)
 				.then((response) => {
-					setPeliculas() // Aquí coger de Admin el setPeliculas y añadir la película para no tener que hacer una petición de nuevo al Backend
-					console.log(response.data);
+					onAgregarPelicula({ ...datos, _id: response.data.data._id });
 				})
 				.catch((error) => {
 					if (error.message === "Network Error") {
-						setErrorMsg("Error en el servidor. Inténtalo más tarde.");
+						onMostrarMsgFetch("Error en el servidor. Inténtalo más tarde.");
 					} else {
-						setErrorMsg(error.response.data.msg);
+						onMostrarMsgFetch(error.response?.data.msg);
 					}
 				});
 		} else {
@@ -87,7 +88,7 @@ const PeliculaForm = ({ visibleFormPelicula, onCancelar }) => {
 	};
 
 	return (
-		<form style={{ display: visibleFormPelicula }} onSubmit={handleFormSubmit}>
+		<form style={{ display: visibleFormPelicula ? "block" : "none" }} onSubmit={handleFormSubmit}>
 			<div>
 				<label htmlFor="title">Título:</label>
 				<input
@@ -182,6 +183,24 @@ const PeliculaForm = ({ visibleFormPelicula, onCancelar }) => {
 			</div>
 			<button type="submit">Añadir</button>
 			<button
+				type="button"
+				onClick={() => {
+					setDatos({
+						title: null,
+						synopsis: null,
+						year: null,
+						duration: null,
+						director: null,
+						categories: [],
+						platforms: [],
+						images: { cartel: null, poster: null },
+					});
+				}}
+			>
+				Limpiar
+			</button>
+			<button
+				type="button"
 				onClick={() => {
 					visibleFormPelicula === true ? onCancelar(false) : false;
 				}}
