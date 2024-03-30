@@ -1,0 +1,230 @@
+
+
+.header {
+    background:var(--col-dark-4);
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    width: 100%;
+    height: calc(8vh - 4px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: var(--max-dt-screen);
+}
+
+.header__logo {
+    width: 20%;
+}
+
+.header__img {
+    height: 30px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 7vh;
+    width: 80%;
+}
+
+.nav__ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    width: inherit;
+}
+
+.nav__li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.nav__li a {
+    font-family: "regular-300";
+    font-size: var(--size-normal);
+    text-decoration: none;
+    color: var(--col-w);
+}
+
+.nav__button {
+    font-family: "regular-400";
+    font-size: var(--size-normal);
+    background-color: transparent;
+    color: var(--col-w);
+    border-radius: 20px;
+    border: solid var(--col-w) 2px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav__button:hover {
+    background-color: var(--col-light-2);
+    color: var(--col-dark-4);
+}
+
+.header__bar {
+    height: 4px;
+    width: 100%;
+    background-color: var(--col-light-2);
+}
+
+
+
+
+
+/* MAIN */
+
+.main {
+    margin: 8vh 0px 0px 0px;
+    padding: 30px 0px 50px 0px;
+    width: 100%;
+    height: 100%;
+    min-height: calc(78vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--col-dark-3);
+}
+
+
+.main__view-container {
+    width: 100%;
+    max-width: var(--max-dt-screen);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page__title {
+    margin: 20px 0px 20px 0px;
+    font-family: "regular-600";
+    font-size: var(--size-huge);
+    color: var(--col-w)
+}
+
+
+
+
+
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    height: 14vh;
+    background-color: var(--col-dark-4);
+}
+
+.footer__bar {
+    height: 4px;
+    width: 100%;
+    background-color: var(--col-light-2);
+}
+
+.footer__content-container{
+    height: calc(14vh - 4px);
+    width: 100%;
+    max-width: var(--max-dt-screen);
+    gap: 10px;
+}
+
+.footer__content {
+    gap: 40px;
+    width: 100%;
+    max-width: var(--max-dt-screen);
+}
+
+.nav__footer {
+    width: 50%;
+}
+
+.nav__title {
+    text-decoration: none;
+    color: var(--col-w);
+    font-family: 'regular-200';
+    font-size: var(--size-small);
+    text-align: center;
+    margin: 0px;
+}
+
+.nav__ul--footer {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.nav__li--footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    text-decoration: none;
+    color: var(--col-w);
+    font-family: 'regular-200';
+    font-size: var(--size-tiny);
+    cursor: pointer;
+}
+
+.nav__li--footer a {
+    font-size: var(--size);
+    text-decoration: none;
+    color: var(--col-w);
+    font-family: 'regular-200';
+    font-size: var(--size-tiny);
+    cursor: pointer;
+}
+
+.footer__rrss {
+    width: 50%;
+}
+
+.footer__ul-rrss {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+
+.footer__copyright-container {
+    height: 4vh;
+}
+
+.footer__copyright {
+    font-family: "regular-200";
+    font-size: var(--size-tiny);
+    color: var(--col-w)
+}

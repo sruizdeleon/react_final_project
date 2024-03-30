@@ -1,9 +1,9 @@
 import SignupForm from "../../components/signupForm/SignupForm";
+import "./Signup.css";
 
 const Signup = () => {
 	return (
 		<>
-            <h1>Registro</h1>
             <SignupForm></SignupForm>
 		</>
 	);

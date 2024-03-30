@@ -26,7 +26,7 @@ async function login(req, res) {
 				return res.status(400).json({ msg: "No existe el usuario o credenciales no válidas" });
 			} else {
 				const token = jwt.sign({ userId: foundUser._id }, process.env.DB_PASSWORD, { expiresIn: "1h" });
-				return res.status(200).json({ msg: "ok", token: token, role: foundUser.role });
+				return res.status(200).json({ msg: "ok", token: token, role: foundUser.role, name: foundUser.name });
 			}
 		}
 	} catch (error) {
@@ -40,10 +40,10 @@ async function signup(req, res) {
 	try {
 		const hash = await bcrypt.hash(req.body.password, 10);
 		const newUser = new User({
+			name: req.body.name,
+			surname: req.body.surname,
 			email: req.body.email,
 			password: hash,
-			name: req.body.name,
-			surbame: req.body.surbame,
 			birthDate: req.body.birthDate,
 			interests: req.body.interests,
 			role: "user",

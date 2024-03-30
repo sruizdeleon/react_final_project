@@ -22,7 +22,12 @@ const filmSchema = new mongoose.Schema({
 			required: false,
 		},
 	],
-	userId: {
+	creatorUserId: {
+		type: mongoose.Types.ObjectId,
+		ref: "users",
+		required: true,
+	},
+	lastModifierUserId: {
 		type: mongoose.Types.ObjectId,
 		ref: "users",
 		required: false,

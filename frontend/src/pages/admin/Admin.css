@@ -1,5 +1,35 @@
+
+.addFilm__button-container {
+    padding: 2px;
+    border-radius: 24px;
+    border: var(--col-light-2) solid 2px;
+    margin: 0px 0px 30px 0px;
+}
+
+.addFilm__button-container:hover {
+    border: var(--col-light-4) solid 2px;
+    transition: border 0.4s;
+}
+
+.addFilm__button{
+    background-color: var(--col-light-2);
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: "regular-400";
+    font-size: var(--size-normal);
+    cursor: pointer;
+}
+
+.addFilm__button:hover{
+    transition: background-color 0.5s;
+    background-color: var(--col-light-4);
+}
+
+
 .cards-section {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }

@@ -1,0 +1,113 @@
+.card {
+    width: 200px;
+    border-radius: 21px 21px 0px 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.card__header {
+    border-radius: 21px 21px 0px 0px;
+    background-color: var(--col-light-3);
+    border: none;
+}
+
+.card__image {
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+}
+
+
+.card__body {
+    position: relative;
+    height: 48px;
+    padding: 0px 5px;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.005),
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+        rgba(0,0,0,1));
+        margin-top: -30px;
+        padding-top: 20px
+}
+
+.card__title {
+    margin: 10px 0px;
+    padding: 0px;
+    font-family: 'regular-500';
+    font-size: var(--size-extra-small);
+    color: var(--col-w);
+    text-align: center;
+}
+
+.card__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+}
+
+.card__button {
+    border-radius: 0px 0px 10px 10px;
+    border: none;
+    font-size: var(--size-small);
+    font-family: 'regular-300';
+    height: 25px;
+    background-color: var(--col-light-2);
+    cursor: pointer;
+    width: 100%;
+    transition: height 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.card__button--see:hover {
+    transition: height 0.3s, background-color 0.3s, color 0.3s;
+    background-color: var(--col-light-4);
+    height: 35px;
+    color: var(--col-w);
+}
+
+.card__button--edit:hover {
+    transition: height 0.3s, background-color 0.3s, color 0.3s;
+    background-color: burlywood;
+    transition: height 0.5s;
+    height: 35px;
+    color: var(--col-w);
+}
+
+.card__button--delete:hover {
+    transition: height 0.3s, background-color 0.3s, color 0.3s;
+    background-color:brown;
+    transition: height 0.5s;
+    height: 35px;
+    color: var(--col-w);
+}

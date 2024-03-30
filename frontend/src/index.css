@@ -1,6 +1,249 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     text-decoration: none;
     list-style: none;
+    border-width: 0px;
+    background-color: transparent;
+}
+
+p, a, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+
+    /* view screen */
+
+    --max-dt-screen: 1000px;
+
+    /* Basic colors */
+
+    --col-b: black;
+    --col-w: white;
+    --col-g-1: rgb(234, 234, 234);
+    --col-g-2: rgb(192, 192, 192);
+    --col-g-3: rgb(128, 128, 128);
+    --col-g-4: rgb(77, 77, 77);
+    --col-g-5: rgb(28, 28, 28);
+
+    /* Dark color */
+    --col-dark-1: #254D51;
+    --col-dark-2: #1C3D43;
+    --col-dark-3: #122E35;
+    --col-dark-4: #081F28;
+
+    /* Light color */
+    --col-light-1: #BDEFC9;
+    --col-light-2: #A5DBB1;
+    --col-light-3: #82BD8E;
+    --col-light-4: #5FA06C;
+
+
+    /* Dark color transparece */
+    /* "tr" transparence = 10%, 20%... */
+    --col-dark-1-tr-10: rgba(37, 77, 81, 0.1);
+    --col-dark-1-tr-20: rgba(37, 77, 81, 0.2);
+    --col-dark-1-tr-30: rgba(37, 77, 81, 0.3);
+    --col-dark-1-tr-40: rgba(37, 77, 81, 0.4);
+    --col-dark-1-tr-50: rgba(37, 77, 81, 0.5);
+    --col-dark-1-tr-60: rgba(37, 77, 81, 0.6);
+    --col-dark-1-tr-70: rgba(37, 77, 81, 0.7);
+    --col-dark-1-tr-80: rgba(37, 77, 81, 0.8);
+    --col-dark-1-tr-90: rgba(37, 77, 81, 0.9);
+
+    --col-dark-2-tr-10: rgba(28, 61, 67, 0.1);
+    --col-dark-2-tr-20: rgba(28, 61, 67, 0.2);
+    --col-dark-2-tr-30: rgba(28, 61, 67, 0.3);
+    --col-dark-2-tr-40: rgba(28, 61, 67, 0.4);
+    --col-dark-2-tr-50: rgba(28, 61, 67, 0.5);
+    --col-dark-2-tr-60: rgba(28, 61, 67, 0.6);
+    --col-dark-2-tr-70: rgba(28, 61, 67, 0.7);
+    --col-dark-2-tr-80: rgba(28, 61, 67, 0.8);
+    --col-dark-2-tr-90: rgba(28, 61, 67, 0.9);
+
+    --col-dark-3-tr-10: rgba(18, 46, 53, 0.1);
+    --col-dark-3-tr-20: rgba(18, 46, 53, 0.2);
+    --col-dark-3-tr-30: rgba(18, 46, 53, 0.3);
+    --col-dark-3-tr-40: rgba(18, 46, 53, 0.4);
+    --col-dark-3-tr-50: rgba(18, 46, 53, 0.5);
+    --col-dark-3-tr-60: rgba(18, 46, 53, 0.6);
+    --col-dark-3-tr-70: rgba(18, 46, 53, 0.7);
+    --col-dark-3-tr-80: rgba(18, 46, 53, 0.8);
+    --col-dark-3-tr-90: rgba(18, 46, 53, 0.9);
+
+    --col-dark-4-tr-10: rgba(8, 31, 40, 0.1);
+    --col-dark-4-tr-20: rgba(8, 31, 40, 0.2);
+    --col-dark-4-tr-30: rgba(8, 31, 40, 0.3);
+    --col-dark-4-tr-40: rgba(8, 31, 40, 0.4);
+    --col-dark-4-tr-50: rgba(8, 31, 40, 0.5);
+    --col-dark-4-tr-60: rgba(8, 31, 40, 0.6);
+    --col-dark-4-tr-70: rgba(8, 31, 40, 0.7);
+    --col-dark-4-tr-80: rgba(8, 31, 40, 0.8);
+    --col-dark-4-tr-90: rgba(8, 31, 40, 0.9);
+
+
+
+    /* Light color transparece */
+
+    --col-light-1-tr-10: rgba(189, 239, 201, 0.1);
+    --col-light-1-tr-20: rgba(189, 239, 201, 0.2);
+    --col-light-1-tr-30: rgba(189, 239, 201, 0.3);
+    --col-light-1-tr-40: rgba(189, 239, 201, 0.4);
+    --col-light-1-tr-50: rgba(189, 239, 201, 0.5);
+    --col-light-1-tr-60: rgba(189, 239, 201, 0.6);
+    --col-light-1-tr-70: rgba(189, 239, 201, 0.7);
+    --col-light-1-tr-80: rgba(189, 239, 201, 0.8);
+    --col-light-1-tr-90: rgba(189, 239, 201, 0.9);
+
+    --col-light-2-tr-10: rgba(165, 219, 177, 0.1);
+    --col-light-2-tr-20: rgba(165, 219, 177, 0.2);
+    --col-light-2-tr-30: rgba(165, 219, 177, 0.3);
+    --col-light-2-tr-40: rgba(165, 219, 177, 0.4);
+    --col-light-2-tr-50: rgba(165, 219, 177, 0.5);
+    --col-light-2-tr-60: rgba(165, 219, 177, 0.6);
+    --col-light-2-tr-70: rgba(165, 219, 177, 0.7);
+    --col-light-2-tr-80: rgba(165, 219, 177, 0.8);
+    --col-light-2-tr-90: rgba(165, 219, 177, 0.9);
+
+    --col-light-3-tr-10: rgba(130, 189, 142, 0.1);
+    --col-light-3-tr-20: rgba(130, 189, 142, 0.2);
+    --col-light-3-tr-30: rgba(130, 189, 142, 0.3);
+    --col-light-3-tr-40: rgba(130, 189, 142, 0.4);
+    --col-light-3-tr-50: rgba(130, 189, 142, 0.5);
+    --col-light-3-tr-60: rgba(130, 189, 142, 0.6);
+    --col-light-3-tr-70: rgba(130, 189, 142, 0.7);
+    --col-light-3-tr-80: rgba(130, 189, 142, 0.8);
+    --col-light-3-tr-90: rgba(130, 189, 142, 0.9);
+
+    --col-light-4-tr-10: rgba(95, 160, 108, 0.1);
+    --col-light-4-tr-20: rgba(95, 160, 108, 0.2);
+    --col-light-4-tr-30: rgba(95, 160, 108, 0.3);
+    --col-light-4-tr-40: rgba(95, 160, 108, 0.4);
+    --col-light-4-tr-50: rgba(95, 160, 108, 0.5);
+    --col-light-4-tr-60: rgba(95, 160, 108, 0.6);
+    --col-light-4-tr-70: rgba(95, 160, 108, 0.7);
+    --col-light-4-tr-80: rgba(95, 160, 108, 0.8);
+    --col-light-4-tr-90: rgba(95, 160, 108, 0.9);
+
+
+
+
+    /* FONTS */
+
+    /* Size */
+    --size-tiny: 0.7rem;
+    --size-extra-small: 0.8rem;
+    --size-small: 0.9rem;
+    --size-medium: 1rem;
+    --size-big: 1.5re;
+    --size-extra-big: 1.7rem;
+    --size-huge: 2rem;
+}
+
+/* Family */
+
+@font-face {
+    font-family: "regular-100";
+    src: url("./assets/font/poppins/Poppins-100.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-200";
+    src: url("./assets/font/poppins/Poppins-200.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-300";
+    src: url("./assets/font/poppins/Poppins-300.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-400";
+    src: url("./assets/font/poppins/Poppins-400.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-500";
+    src: url("./assets/font/poppins/Poppins-500.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-600";
+    src: url("./assets/font/poppins/Poppins-600.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-700";
+    src: url("./assets/font/poppins/Poppins-700.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-800";
+    src: url("./assets/font/poppins/Poppins-800.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: "regular-900";
+    src: url("./assets/font/poppins/Poppins-900.ttf");
+    font-display: block;
+}
+
+.f-c-c-c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-c-c-l{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+.f-c-c-r{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-end;
+}
+
+.f-r-c-c{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* _________________________SWEETALERT____________________________ */
+
+.swal-overlay--show-modal {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.swal-title{
+    font-family: "regular-400";
+    color: var(--col-dark-1);
+}
+
+.swal-text {
+    font-family: "regular-400";
+    font-size: var(--size-small);
+    text-align: justify;
+    color: var(--col-dark-1);
+}
+
+.swal-button {
+    color: var(--col-dark-1);
+}
+
+.swal-button {
+    color: var(--col-dark-1);
 }
